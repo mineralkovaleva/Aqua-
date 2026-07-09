@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Эльвира Ковалева | Aqua Wellness & Alchemy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --deep-ocean: #0a1f26; --aqua-glow: #00c8aa; --gold: #c5a059; }
+        body { background: var(--deep-ocean); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+        
+        /* Основная анимация появления */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeInUp 1.2s ease-out forwards; }
+
+        /* Анимация вращения фона */
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .flower-bg { position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; opacity: 0.05; pointer-events: none; 
+                     background: radial-gradient(circle, var(--aqua-glow) 1px, transparent 1px); background-size: 60px 60px;
+                     animation: rotate 60s linear infinite; }
+
+        .header { padding: 100px 20px; text-align: center; }
+        .header h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 10px; }
+        
+        .section { max-width: 800px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+        .philosophy { padding: 50px; border: 1px solid rgba(197, 160, 89, 0.3); background: rgba(255,255,255,0.02); }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { padding: 40px; border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; }
+        .card:hover { border-color: var(--gold); box-shadow: 0 0 15px rgba(197, 160, 89, 0.2); }
+        
+        .cert-img { width: 100%; max-width: 500px; border: 2px solid var(--gold); cursor: pointer; transition: 0.4s; }
+        .cert-img:hover { transform: scale(1.02); box-shadow: 0 0 20px var(--gold); }
+        
+        .btn { padding: 20px 40px; border: 1px solid var(--gold); background: transparent; color: #fff; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; transition: 0.5s; }
+        .btn:hover { background: var(--gold); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="flower-bg"></div>
+
+    <header class="header fade-in">
+        <h1>Эльвира Ковалева</h1>
+        <p style="color: var(--gold); letter-spacing: 4px; text-transform: uppercase;">International Aqua Specialist | Aqua Wellness & Alchemy | Калининград</p>
+        <button class="btn" style="margin-top: 30px;" onclick="document.getElementById('contactModal').style.display='flex'">Начать путь к трансформации</button>
+    </header>
+
+    <section class="section fade-in">
+        <div class="philosophy">
+            <h2 style="font-family: 'Playfair Display'; margin-bottom: 20px;">Искусство воды и осознанности</h2>
+            <p>Мой подход — это синергия биомеханики и древних принципов Planetary Alchemy. Здесь, в Калининграде, вода становится для вас не просто стихией, а глубоким медитативным инструментом для восстановления структуры тела, обретения внутренней тишины и гармонии сознания.</p>
+        </div>
+    </section>
+
+    <section class="section fade-in">
+        <h2 style="margin-bottom:30px;">Международная квалификация</h2>
+        <img src="https://raw.githubusercontent.com/mineralkovaleva/Certificate-/main/E6F3CEFB-F6BA-4553-800A-2EF23364219E.png" 
+             alt="Сертификат" class="cert-img" onclick="window.open(this.src)">
+        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--gold);">Нажмите для увеличения</p>
+    </section>
+
+    <section class="section fade-in">
+        <div class="services-grid">
+            <div class="card">
+                <h3>Personal Alchemy</h3>
+                <div style="color: var(--gold); font-size: 1.5rem; margin: 15px 0;">8 500 ₽</div>
+                <p>Индивидуальная программа для глубокой коррекции движения и восстановления природного ресурса.</p>
+            </div>
+            <div class="card">
+                <h3>Aqua Recovery</h3>
+                <div style="color: var(--gold); font-size: 1.5rem; margin: 15px 0;">13 000 ₽</div>
+                <p>Специализированная реабилитация, снятие глубинных мышечных блоков и зажимов.</p>
+            </div>
+            <div class="card">
+                <h3>Elite Membership</h3>
+                <div style="color: var(--gold); font-size: 1.5rem; margin: 15px 0;">30 000 ₽</div>
+                <p>Системное погружение: абонемент на 5 сессий для фундаментальных изменений тела.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:999; justify-content:center; align-items:center;">
+        <div style="background:#0a1f26; border: 1px solid #c5a059; padding:40px; border-radius:5px; text-align:center; max-width: 300px;">
+            <h2 style="color: #c5a059;">Связаться с мастером</h2>
+            <p>Ваше преображение начинается с одного шага.</p>
+            <a href="tel:+79235111979" style="font-size:2rem; color:#00c8aa; display:block; text-decoration:none; margin:20px 0;">+7 923 511-19-79</a>
+            <button onclick="document.getElementById('contactModal').style.display='none'" style="padding:10px 20px; cursor:pointer; background:transparent; color:#fff; border:1px solid #fff;">Закрыть</button>
+        </div>
+    </div>
+
+</body>
+</html>
